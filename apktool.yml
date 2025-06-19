@@ -1,0 +1,22 @@
+version: 2.10.0
+apkFileName: ImsService.apk
+isFrameworkApk: false
+usesFramework:
+  ids:
+  tag: null
+sdkInfo:
+packageInfo:
+  forcedPackageId: null
+  renameManifestPackage: null
+versionInfo:
+  versionCode: null
+  versionName: null
+resourcesAreCompressed: false
+sharedLibrary: false
+sparseResources: false
+doNotCompress:
+- classes.dex
+- resources.arsc
+- META-INF/services/kotlinx.coroutines.CoroutineExceptionHandler
+- META-INF/services/kotlinx.coroutines.internal.MainDispatcherFactory
+- png
