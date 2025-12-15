@@ -83,8 +83,6 @@
 
 .field mIsMobileNetworkSupported:Z
 
-.field private mMetrics:Lcom/android/internal/telephony/metrics/TelephonyMetrics;
-
 .field final mPhoneId:Ljava/lang/Integer;
 
 .field private mRILDefaultWorkSource:Landroid/os/WorkSource;
@@ -129,14 +127,6 @@
 
 
 # direct methods
-.method static bridge synthetic -$$Nest$fgetmMetrics(Lcom/mediatek/wfo/ril/MwiRIL;)Lcom/android/internal/telephony/metrics/TelephonyMetrics;
-    .locals 0
-
-    iget-object p0, p0, Lcom/mediatek/wfo/ril/MwiRIL;->mMetrics:Lcom/android/internal/telephony/metrics/TelephonyMetrics;
-
-    return-object p0
-.end method
-
 .method static bridge synthetic -$$Nest$mclearWakeLock(Lcom/mediatek/wfo/ril/MwiRIL;I)Z
     .locals 0
 
@@ -266,13 +256,6 @@
     invoke-direct {v1, v0}, Ljava/util/concurrent/atomic/AtomicBoolean;-><init>(Z)V
 
     iput-object v1, p0, Lcom/mediatek/wfo/ril/MwiRIL;->mTestingEmergencyCall:Ljava/util/concurrent/atomic/AtomicBoolean;
-
-    .line 293
-    invoke-static {}, Lcom/android/internal/telephony/metrics/TelephonyMetrics;->getInstance()Lcom/android/internal/telephony/metrics/TelephonyMetrics;
-
-    move-result-object v1
-
-    iput-object v1, p0, Lcom/mediatek/wfo/ril/MwiRIL;->mMetrics:Lcom/android/internal/telephony/metrics/TelephonyMetrics;
 
     .line 305
     const/4 v1, 0x0
@@ -3464,25 +3447,6 @@
 
     .line 1147
     :goto_0
-    iget-object v1, p0, Lcom/mediatek/wfo/ril/MwiRIL;->mMetrics:Lcom/android/internal/telephony/metrics/TelephonyMetrics;
-
-    iget-object v0, p0, Lcom/mediatek/wfo/ril/MwiRIL;->mPhoneId:Ljava/lang/Integer;
-
-    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
-
-    move-result v2
-
-    iget v3, p1, Lcom/mediatek/wfo/ril/RILRequest;->mSerial:I
-
-    iget v4, p2, Landroid/hardware/radio/V1_0/RadioResponseInfo;->error:I
-
-    iget v5, p1, Lcom/mediatek/wfo/ril/RILRequest;->mRequest:I
-
-    move-object v6, p3
-
-    .end local p3    # "ret":Ljava/lang/Object;
-    .local v6, "ret":Ljava/lang/Object;
-    invoke-virtual/range {v1 .. v6}, Lcom/android/internal/telephony/metrics/TelephonyMetrics;->writeOnRilSolicitedResponse(IIIILjava/lang/Object;)V
 
     .line 1149
     if-eqz p1, :cond_2

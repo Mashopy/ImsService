@@ -5547,27 +5547,6 @@
     .line 4339
     :cond_1
     :goto_0
-    iget-object v1, p0, Lcom/mediatek/ims/ril/ImsRILAdapter;->mMetrics:Lcom/android/internal/telephony/metrics/TelephonyMetrics;
-
-    iget-object v0, p0, Lcom/mediatek/ims/ril/ImsRILAdapter;->mPhoneId:Ljava/lang/Integer;
-
-    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
-
-    move-result v2
-
-    iget v3, p1, Lcom/mediatek/ims/ril/RILRequest;->mSerial:I
-
-    iget v5, p1, Lcom/mediatek/ims/ril/RILRequest;->mRequest:I
-
-    move v4, p2
-
-    move-object v6, p4
-
-    .end local p2    # "rilError":I
-    .end local p4    # "ret":Ljava/lang/Object;
-    .local v4, "rilError":I
-    .local v6, "ret":Ljava/lang/Object;
-    invoke-virtual/range {v1 .. v6}, Lcom/android/internal/telephony/metrics/TelephonyMetrics;->writeOnRilSolicitedResponse(IIIILjava/lang/Object;)V
 
     .line 4342
     iget p2, p1, Lcom/mediatek/ims/ril/RILRequest;->mRequest:I
@@ -8600,19 +8579,6 @@
     iget v2, v1, Lcom/mediatek/ims/ril/RILRequest;->mSerial:I
 
     invoke-virtual {v0, v2}, Lcom/mediatek/ims/ril/RadioVoiceProxy;->acceptCall(I)V
-
-    .line 1737
-    iget-object v2, p0, Lcom/mediatek/ims/ril/ImsRILAdapter;->mMetrics:Lcom/android/internal/telephony/metrics/TelephonyMetrics;
-
-    iget-object v3, p0, Lcom/mediatek/ims/ril/ImsRILAdapter;->mPhoneId:Ljava/lang/Integer;
-
-    invoke-virtual {v3}, Ljava/lang/Integer;->intValue()I
-
-    move-result v3
-
-    iget v4, v1, Lcom/mediatek/ims/ril/RILRequest;->mSerial:I
-
-    invoke-virtual {v2, v3, v4}, Lcom/android/internal/telephony/metrics/TelephonyMetrics;->writeRilAnswer(II)V
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
     .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_0
@@ -17738,45 +17704,6 @@
 
     .line 4475
     :goto_0
-    iget-object v13, v1, Lcom/mediatek/ims/ril/ImsRILAdapter;->mMetrics:Lcom/android/internal/telephony/metrics/TelephonyMetrics;
-
-    iget-object v6, v1, Lcom/mediatek/ims/ril/ImsRILAdapter;->mPhoneId:Ljava/lang/Integer;
-
-    invoke-virtual {v6}, Ljava/lang/Integer;->intValue()I
-
-    move-result v14
-
-    iget v15, v4, Lcom/mediatek/ims/ril/RILRequest;->mSerial:I
-
-    .line 4476
-    invoke-virtual {v0, v2}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    .line 4477
-    move/from16 v17, v12
-
-    goto :goto_1
-
-    .line 4478
-    :cond_1
-    const/4 v0, 0x2
-
-    move/from16 v17, v0
-
-    :goto_1
-    nop
-
-    .line 4475
-    const/16 v16, 0x3
-
-    const-wide/16 v18, 0x0
-
-    invoke-virtual/range {v13 .. v19}, Lcom/android/internal/telephony/metrics/TelephonyMetrics;->writeRilSendSms(IIIIJ)V
-
-    .line 4483
     goto :goto_2
 
     .line 4472
